@@ -4,7 +4,7 @@ import env from "../env/inex"
 import app from "./app"
 
 app
-  .listen({ port: env.PORT })
+  .listen({ port: env.PORT, host: ("RENDER" in process.env) ? '0.0.0.0' : 'localhost', })
   .then(() => {
     console.log('fastify conectado!')
   })
